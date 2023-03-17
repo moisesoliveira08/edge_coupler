@@ -1,0 +1,26 @@
+switchtolayout;
+G = 400e-9;
+W = 140e-9;
+x = 34.9e-6;
+number_of_points = 6;
+w_start = 100e-9;
+w_stop = 200e-9;
+w = linspace(w_start,w_stop,number_of_points);
+
+addsweep();
+setsweep("sweep", "name", "G_400_sweep");
+setsweep("G_400_sweep", "type", "values");
+setsweep("G_400_sweep", "number of points", number_of_points);
+
+para_1 = {"Name":"taper_input_up",
+"Parameter":"::model::taper_input_up::vertices",
+"Type":"Matrix"}
+
+
+#for k in range(number_of_points):
+    #matrix = 1e6*np.array([[0, G/2],
+                        #[0, G/2 + w[k]],
+                        #[x, G_MMI/2 + 0.6e-6],
+                        #[x, G_MMI/2 + 0.15e-6]])
+    #para_1.update({"value_" + str(k+1):(matrix)})
+#mode.addsweepparameter('G_400_sweep', para_1)
